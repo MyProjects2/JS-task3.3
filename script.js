@@ -1,7 +1,16 @@
 'use strict'
 var userInput = prompt('Напишите любое слово');
-const countVowels = str => Array.from(str).filter(letter => 'aeёиоуэюяАЕЁИОУЭЮЯ'.includes(letter)).length;
-console.log(`Количество гласных букв в слове: ${countVowels(userInput)}`);
+//const countVowels = str => Array.from(str).filter(letter => 'aeёиоуэюяАЕЁИОУЭЮЯ'.includes(letter)).length;
+//console.log(`Количество гласных букв в слове: ${countVowels(userInput)}`);
+function countVowels(string) {
+    var arrayOfLetters = Array.from(string);
+    var filtered = arrayOfLetters.filter(function(letter) {
+        return 'aeёиоуэюяАЕЁИОУЭЮЯ'.includes(letter);   
+    });
+    return filtered.length;
+}
+console.log('Количество гласных букв в слове: ' + countVowels(userInput));
+
 
 
 
